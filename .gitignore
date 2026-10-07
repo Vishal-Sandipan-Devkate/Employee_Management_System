@@ -1,0 +1,8 @@
+WEB-INF/classes/
+logs/
+
+*.class
+
+.vscode/
+.idea/
+.DS_Store
