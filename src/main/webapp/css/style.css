@@ -5,21 +5,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
 }
 
 /* Form Container */
-form {
+main, form, table {
     background-color: #fff;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    width: 350px;
+    width: min(90%, 800px);
+    margin: 20px auto;
 }
 
 /* Heading */
-h2 {
+h1 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
@@ -33,7 +34,8 @@ label {
 
 /* Input Fields */
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input:not([type]) {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -63,6 +65,18 @@ input[type="submit"] {
     font-size: 16px;
     transition: 0.3s;
 }
+
+main { background: transparent; box-shadow: none; }
+label { display: block; margin: 14px 0; }
+table { border-collapse: collapse; background: white; }
+th, td { padding: 12px; border-bottom: 1px solid #ddd; text-align: left; }
+a, button, input[type="submit"] { color: #1261a0; }
+.button, button, input[type="submit"] { padding: 10px 14px; border: 0; border-radius: 6px; cursor: pointer; }
+.button, input[type="submit"] { background: #4facfe; color: white; text-decoration: none; }
+.inline { display: inline; padding: 0; box-shadow: none; }
+.inline button { background: #eee; }
+.errors { color: #9b1c1c; background: #fee2e2; padding: 8px 20px; border-radius: 6px; }
+.success { color: #166534; }
 
 /* Hover Effect */
 input[type="submit"]:hover {

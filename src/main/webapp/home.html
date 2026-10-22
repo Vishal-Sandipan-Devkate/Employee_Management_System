@@ -2,16 +2,17 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Employee Registration Form</title>
+    <title>Employee Management</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <h2>Employee Registration</h2>
+    <main>
+    <h1>Add Employee</h1>
 
-    <form action="Register" method="post">
+    <form action="employees" method="post">
 
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
@@ -28,9 +29,11 @@
 
         <br><br>
 
-        <input type="submit" value="Register">
+        <input type="submit" value="Save Employee">
 
     </form>
+    <p><a href="employees">View employees</a></p>
+    </main>
 
 </body>
 </html>
