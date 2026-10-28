@@ -14,6 +14,13 @@ requires Java 21, Maven, Tomcat 10.1+, and MySQL 8+.
    Change the placeholder password in `schema.sql` before using it outside a
    local development environment.
 
+   The schema seeds an administrator account:
+
+   - Username: `admin`
+   - Password: `ChangeMe123!`
+
+   Change this password in the database before deployment.
+
 2. Configure the application without committing credentials:
 
    ```sh
@@ -38,7 +45,4 @@ requires Java 21, Maven, Tomcat 10.1+, and MySQL 8+.
 - Unique email enforcement.
 - Prepared statements and try-with-resources for database access.
 - Technical errors are logged server-side instead of exposed to users.
-
-The application currently has no authentication. Add administrator
-authentication and authorization before deploying it to a shared or public
-environment.
+- Session-based administrator authentication and CSRF protection for changes.

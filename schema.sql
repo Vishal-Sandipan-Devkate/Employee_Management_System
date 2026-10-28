@@ -7,6 +7,20 @@ GRANT SELECT, INSERT, UPDATE ON sat.* TO 'employee_app'@'localhost';
 
 USE sat;
 
+CREATE TABLE IF NOT EXISTS users (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password_hash VARCHAR(500) NOT NULL,
+    role VARCHAR(30) NOT NULL DEFAULT 'ADMIN',
+    enabled BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+INSERT INTO users (username, password_hash, role)
+SELECT 'admin',
+       'PBKDF2WithHmacSHA256$210000$kn6hNdBmaqHnB/G3yFiXbA==$TLUNi823rahlHj87srY/OTYuH3l6EIZt87szYsg4K0c=',
+       'ADMIN'
+WHERE NOT EXISTS (SELECT 1 FROM users WHERE username = 'admin');
+
 CREATE TABLE IF NOT EXISTS employees (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
