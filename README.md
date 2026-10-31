@@ -24,9 +24,9 @@ requires Java 21, Maven, Tomcat 10.1+, and MySQL 8+.
 2. Configure the application without committing credentials:
 
    ```sh
-   export DB_URL='jdbc:mysql://localhost:3306/sat'
-   export DB_USER='employee_app'
-   export DB_PASSWORD='your-application-password'
+   export DB_URL=''
+   export DB_USER=''
+   export DB_PASSWORD=''
    ```
 
 3. Build the deployable WAR:
